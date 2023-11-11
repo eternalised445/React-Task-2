@@ -8,7 +8,7 @@ const App = () => {
   const calculate = (btnValue) => {
     if (btnValue === '=' && output !== '') {
       try {
-        setOutput(eval(output.replace('%', '/100')).toString());
+        setOutput((parseFloat(output.replace('%', '')) / 100).toString());
       } catch (error) {
         setOutput('Error');
       }
